@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Player</title>
+
+    <link href="code/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="code/css/fonts.css" rel="stylesheet" type="text/css"/>
+    <link href="code/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://kit.fontawesome.com/1a5dbb7df6.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="code/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="code/js/buttons.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="start">
+            <span> Выбери фильм </span>
+            <input class="box" type="file" id="file" multiple accept="video/*"/>
+        </div>
+        <div class="VideoWrapp"> </div>
+        <div class="PlayPause">
+            <i class="fas fa-play"></i>
+        </div>
+        <div class="TimeIndicator">
+            <div class="TimeIndicator_Arrow"> </div>
+            <span class="IndicatorHours"></span>
+            <span class="IndicatorMins"></span>
+            <span class="IndicatorSecs"></span>
+        </div>
+        <div class="ControlPanel">
+            <div class="ProgressBar" id="ProgressBar">
+                <progress id="progress" class="progress" value="0" max="100"> </progress>
+                <span class="circle"></span>
+            </div>
+            <div class="Timer">
+                <div class="CurrentTime"><span class="hour"></span><span class="min"></span><span class="sec"></span></div>
+                <div class="Slash"> / </div>
+                <div class="Duration"><span class="h"></span><span class="m"></span><span class="s"></span></div>
+            </div>
+            <div class="Controls">
+                <div class="less_speed"> <i class="fad fa-angle-double-left"></i> </div>
+                <div class="more_speed"> <i class="fad fa-angle-double-right"></i> </div>
+                <div class="ignore"> <i class="fad fa-map-marker-slash"></i>  </div>
+                <div class="ontop"> <i class="fas fa-clone"></i> </div>
+                <div class="fullscreen"> <i class="fad fa-expand"></i> </div>
+                <div class="out"> <i class="fal fa-sign-out"></i> </div>
+            </div>
+        </div>
+        <div class="end">
+            <div class="restart"> <i class="fal fa-sync"></i> </div>
+            <div class="out"> <i class="fal fa-sign-out"></i> </div>
+        </div>
+        <div class="DragArea">
+            <span></span>
+            <div class="CloseAndMin">
+                <div class="Minimize"> <i class="far fa-window-minimize"></i> </div>
+                <div class="Close"> <i class="fal fa-times"></i> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

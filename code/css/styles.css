@@ -1,0 +1,237 @@
+body
+{   background: #151619;
+    font-family: Tahoma, "Kaushan Script", "Certege", "Neris", "Bernier Regular", "Font Awesome 5 Free";
+    overflow: hidden;
+    margin: 0;  padding: 0; -webkit-app-region: drag;
+    cursor: default; -moz-user-select: none; -ms-user-select: none; -khtml-user-select: none; -webkit-user-select: none;    }
+::-webkit-scrollbar { width: 0px }
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+/************************************************************************************************/
+.start {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 460px;
+    height: 260px;
+    color: #fff;
+    font-size: 50px;
+    font-family: 'Neris';
+    border: 5px dashed rgba(255,255,255,0.4);
+    z-index: 2000; }
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    -webkit-app-region: no-drag; }
+::-webkit-input-placeholder { color: #fff; }
+/************************************************************************************************/
+.VideoWrapp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    -webkit-app-region: no-drag; }
+.VideoWrapp video { width: 100%; height: 100%; }
+/***********************************************************************************************/
+.DragArea {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 23%;
+    max-height: 140px;
+    font-size: 30px;
+    color: #fff;
+    font-family: "Neris";
+    background: transparent;
+    z-index: 200;
+    -webkit-app-region: drag; }
+.drag span { right: 20% }
+
+.CloseAndMin  {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 202;
+    -webkit-app-region: no-drag; }
+.CloseAndMin div {
+    width: 45px;
+    height: 45px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+.Minimize { margin-right: 5px; }
+.Minimize:hover { background-color: rgba(255, 255, 255, 0.3); }
+.Close:hover { background-color: rgba(177, 15, 15, 0.98); }
+/***********************************************************************************************/
+.PlayPause {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    color: #fff;
+    transition: font-size .1s;
+    z-index: 100; }
+.PlayPause i {
+    display: flex;
+    justify-content: center;;
+    align-items: center;
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    text-shadow: 0px 3px 14px #000; }
+/***********************************************************************************************/
+.ControlPanel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    letter-spacing: 0.8px;
+    height: 38px;
+    bottom: 0;
+    z-index: 500;
+    color: #fff;
+    font-family: "Neris";
+    background: rgba(0,0,0,0.7);
+    -webkit-app-region: no-drag; }
+
+.ProgressBar {
+    width: 100%;
+    height: 12px;
+    z-index: 5; }
+.ProgressBar::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    top: -8px; }
+.progress {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    /* !!!!!!! */ border: 0px solid transparent;
+    background: #fff;
+    border-radius: 15px; }
+.progress::-webkit-progress-value {
+  	border-radius: 3px;
+  	background-color: rgba(186, 26, 26, 0.88); }
+.circle {
+    content:  ' ';
+    position: absolute;
+    background: rgb(183, 183, 183);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: -4px;
+    left: 0;  }
+
+.Timer {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end; }
+.Duration, .CurrentTime { width: 90px; margin-bottom: 6px }
+.CurrentTime { text-align: end; }
+.Slash { margin: 6px 6px; }
+
+.Controls {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    justify-content: flex-end;
+    align-items: flex-end; }
+.Controls div {
+    margin-right: 2px;
+    margin-bottom: 3px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+.Controls div:hover {
+    background: rgba(90, 90, 90, 0.5);}
+
+.TimeIndicator {
+    display: flex;
+    opacity: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: flex-start;
+    height: auto;
+    width: 60px;
+    padding: 2px 4px;
+    background-color: #fff;
+    font-family: "Neris";
+    border-radius: 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.15);
+    border: 1px solid rgba(30, 30, 30, 0.8);
+    transition: top .3s, opacity .3s;
+    z-index: 50; }
+.TimeIndicator_Arrow {
+    position: absolute;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  top: 21px;
+  background: #fff;
+  border-bottom: 1px solid rgba(30,30,30, 0.8);
+  border-right: 1px solid rgba(30, 30, 30, 0.8); }
+/***********************************************************************************************/
+.end {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 60px;
+  z-index: 100;
+  -webkit-app-region: no-drag; }
+.restart, .end .out {
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  font-size: 50px;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.6);
+  transition: .15s; }
+.restart:hover, .end .out:hover {
+  font-size: 65px;
+  background: radial-gradient(black, transparent); }
+.stop_youtube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 5px; }
